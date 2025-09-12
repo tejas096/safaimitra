@@ -166,7 +166,7 @@ const Index = () => {
               <EcoCard
                 key={index}
                 variant="hover"
-                className={`text-center cursor-pointer transition-all duration-300 ${
+                className={`text-center cursor-pointer transition-all duration-300 ring-2 ring-primary shadow-lg${
                   activeFeature === index ? "ring-2 ring-primary shadow-lg" : ""
                 }`}
                 onClick={() => setActiveFeature(index)}

@@ -19,7 +19,6 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { href: "/", label: "Home", icon: Home },
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { href: "/report", label: "Report Issue", icon: MessageSquare },
     { href: "/kabadi", label: "Kabadi Shop", icon: Recycle },
