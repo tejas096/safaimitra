@@ -11,7 +11,8 @@ import {
   Settings,
   Menu,
   X,
-  Leaf
+  Leaf,
+  Users
 } from "lucide-react";
 
 const Navigation = () => {
@@ -23,6 +24,7 @@ const Navigation = () => {
     { href: "/report", label: "Report Issue", icon: MessageSquare },
     { href: "/kabadi", label: "Kabadi Shop", icon: Recycle },
     { href: "/rewards", label: "Rewards", icon: ShoppingCart },
+    { href: "/hire-workers", label: "Hire Workers", icon: Users },
     { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
     { href: "/admin", label: "Admin", icon: Settings },
   ];
