@@ -2,7 +2,13 @@ import { useState } from "react";
 import { Search, MapPin, Star, Phone, Clock, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import EcoCard from "@/components/EcoCard";
 
@@ -82,38 +88,94 @@ const KabadiShop = () => {
       id: "paper",
       category: "Paper & Cardboard",
       items: [
-        { name: "Newspapers", priceRange: "₹6-8", unit: "per kg", description: "Old newspapers and magazines" },
-        { name: "Cardboard Boxes", priceRange: "₹5-7", unit: "per kg", description: "Corrugated cardboard boxes" },
-        { name: "Office Paper", priceRange: "₹8-12", unit: "per kg", description: "White office paper and documents" },
-        { name: "Books", priceRange: "₹10-15", unit: "per kg", description: "Old books and notebooks" },
+        {
+          name: "Newspapers",
+          priceRange: "₹6-8",
+          unit: "per kg",
+          description: "Old newspapers and magazines",
+        },
+        {
+          name: "Cardboard Boxes",
+          priceRange: "₹5-7",
+          unit: "per kg",
+          description: "Corrugated cardboard boxes",
+        },
+        {
+          name: "Office Paper",
+          priceRange: "₹8-12",
+          unit: "per kg",
+          description: "White office paper and documents",
+        },
+        {
+          name: "Books",
+          priceRange: "₹10-15",
+          unit: "per kg",
+          description: "Old books and notebooks",
+        },
       ],
     },
     {
       id: "plastic",
       category: "Plastic Items",
       items: [
-        { name: "PET Bottles", priceRange: "₹12-18", unit: "per kg", description: "Water and soft drink bottles" },
-        { name: "Plastic Bags", priceRange: "₹8-12", unit: "per kg", description: "Shopping bags and packaging" },
-        { name: "Containers", priceRange: "₹15-20", unit: "per kg", description: "Food containers and packaging" },
+        {
+          name: "PET Bottles",
+          priceRange: "₹12-18",
+          unit: "per kg",
+          description: "Water and soft drink bottles",
+        },
+        {
+          name: "Plastic Bags",
+          priceRange: "₹8-12",
+          unit: "per kg",
+          description: "Shopping bags and packaging",
+        },
+        {
+          name: "Containers",
+          priceRange: "₹15-20",
+          unit: "per kg",
+          description: "Food containers and packaging",
+        },
       ],
     },
     {
       id: "metal",
       category: "Metal & Electronics",
       items: [
-        { name: "Aluminum Cans", priceRange: "₹80-100", unit: "per kg", description: "Beverage cans and containers" },
-        { name: "Copper Wire", priceRange: "₹400-500", unit: "per kg", description: "Electrical wires and cables" },
-        { name: "Iron Scrap", priceRange: "₹25-35", unit: "per kg", description: "Iron and steel items" },
-        { name: "Old Electronics", priceRange: "₹50-200", unit: "per piece", description: "Phones, computers, appliances" },
+        {
+          name: "Aluminum Cans",
+          priceRange: "₹80-100",
+          unit: "per kg",
+          description: "Beverage cans and containers",
+        },
+        {
+          name: "Copper Wire",
+          priceRange: "₹400-500",
+          unit: "per kg",
+          description: "Electrical wires and cables",
+        },
+        {
+          name: "Iron Scrap",
+          priceRange: "₹25-35",
+          unit: "per kg",
+          description: "Iron and steel items",
+        },
+        {
+          name: "Old Electronics",
+          priceRange: "₹50-200",
+          unit: "per piece",
+          description: "Phones, computers, appliances",
+        },
       ],
     },
   ];
 
   const categories = ["all", "paper", "plastic", "metal"];
 
-  const filteredItems = selectedCategory === "all" 
-    ? recyclableItems 
-    : recyclableItems.filter(item => item.id === selectedCategory);
+  const filteredItems =
+    selectedCategory === "all"
+      ? recyclableItems
+      : recyclableItems.filter((item) => item.id === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -125,23 +187,6 @@ const KabadiShop = () => {
             <p className="text-xl opacity-90 mb-8">
               Connect with local scrap dealers and turn your waste into value
             </p>
-            
-            {/* Search Bar */}
-            <div className="max-w-2xl mx-auto flex gap-4">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Search dealers or items..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 bg-white text-foreground"
-                />
-              </div>
-              <Button variant="secondary" size="lg">
-                Search
-              </Button>
-            </div>
           </div>
         </div>
       </div>
@@ -151,14 +196,18 @@ const KabadiShop = () => {
           {/* Sidebar - Price Guide */}
           <div className="lg:col-span-1">
             <EcoCard className="sticky top-4">
-              <h3 className="text-xl font-semibold mb-4">Current Market Prices</h3>
-              
+              <h3 className="text-xl font-semibold mb-4">
+                Current Market Prices
+              </h3>
+
               {/* Category Filter */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {categories.map((category) => (
                   <Button
                     key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
+                    variant={
+                      selectedCategory === category ? "default" : "outline"
+                    }
                     size="sm"
                     onClick={() => setSelectedCategory(category)}
                     className="capitalize"
@@ -172,17 +221,30 @@ const KabadiShop = () => {
               <div className="space-y-4">
                 {filteredItems.map((category) => (
                   <div key={category.id}>
-                    <h4 className="font-medium text-primary mb-2">{category.category}</h4>
+                    <h4 className="font-medium text-primary mb-2">
+                      {category.category}
+                    </h4>
                     <div className="space-y-2">
                       {category.items.map((item, index) => (
-                        <div key={index} className="flex justify-between items-start p-3 bg-accent/30 rounded-lg">
+                        <div
+                          key={index}
+                          className="flex justify-between items-start p-3 bg-accent/30 rounded-lg"
+                        >
                           <div className="flex-1">
-                            <div className="font-medium text-sm">{item.name}</div>
-                            <div className="text-xs text-muted-foreground">{item.description}</div>
+                            <div className="font-medium text-sm">
+                              {item.name}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {item.description}
+                            </div>
                           </div>
                           <div className="text-right">
-                            <div className="font-semibold text-primary">{item.priceRange}</div>
-                            <div className="text-xs text-muted-foreground">{item.unit}</div>
+                            <div className="font-semibold text-primary">
+                              {item.priceRange}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {item.unit}
+                            </div>
                           </div>
                         </div>
                       ))}
@@ -212,7 +274,9 @@ const KabadiShop = () => {
                         <CardTitle className="flex items-center gap-2">
                           {dealer.name}
                           {dealer.isOpen ? (
-                            <Badge className="bg-success text-success-foreground">Open</Badge>
+                            <Badge className="bg-success text-success-foreground">
+                              Open
+                            </Badge>
                           ) : (
                             <Badge variant="destructive">Closed</Badge>
                           )}
@@ -226,12 +290,14 @@ const KabadiShop = () => {
                         <div className="flex items-center gap-1">
                           <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                           <span className="font-medium">{dealer.rating}</span>
-                          <span className="text-muted-foreground">({dealer.reviews})</span>
+                          <span className="text-muted-foreground">
+                            ({dealer.reviews})
+                          </span>
                         </div>
                       </div>
                     </div>
                   </CardHeader>
-                  
+
                   <CardContent>
                     <div className="space-y-4">
                       {/* Specialties */}
@@ -250,12 +316,19 @@ const KabadiShop = () => {
                       <div>
                         <h4 className="font-medium mb-2">Current Rates:</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                          {Object.entries(dealer.pricing).map(([item, price]) => (
-                            <div key={item} className="text-sm p-2 bg-accent/30 rounded">
-                              <div className="capitalize font-medium">{item}</div>
-                              <div className="text-primary">₹{price}/kg</div>
-                            </div>
-                          ))}
+                          {Object.entries(dealer.pricing).map(
+                            ([item, price]) => (
+                              <div
+                                key={item}
+                                className="text-sm p-2 bg-accent/30 rounded"
+                              >
+                                <div className="capitalize font-medium">
+                                  {item}
+                                </div>
+                                <div className="text-primary">₹{price}/kg</div>
+                              </div>
+                            )
+                          )}
                         </div>
                       </div>
 
@@ -285,7 +358,8 @@ const KabadiShop = () => {
             <EcoCard variant="gradient" className="mt-8 text-center">
               <h3 className="text-xl font-semibold mb-2">Need a Pickup?</h3>
               <p className="text-muted-foreground mb-4">
-                Schedule a pickup from your location and get the best rates from multiple dealers
+                Schedule a pickup from your location and get the best rates from
+                multiple dealers
               </p>
               <Button variant="secondary" size="lg">
                 <Truck className="h-5 w-5 mr-2" />

@@ -25,7 +25,6 @@ const Navigation = () => {
     { href: "/rewards", label: "Rewards", icon: ShoppingCart },
     { href: "/hire-workers", label: "Hire Workers", icon: Users },
     { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
-    { href: "/admin", label: "Admin", icon: Settings },
   ];
 
   return (

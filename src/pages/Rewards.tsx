@@ -215,7 +215,7 @@ const Shop = () => {
                     </p>
                     <div className="flex items-center justify-between pt-2">
                       <span className="text-2xl font-bold text-primary">
-                        ₹{product.price}
+                        {product.price} Points
                       </span>
                       <Button
                         size="sm"

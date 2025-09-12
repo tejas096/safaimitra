@@ -12,6 +12,7 @@ import KabadiShop from "./pages/KabadiShop";
 import Rewards from "./pages/Rewards";
 import HireWorkers from "./pages/HireWorkers";
 import NotFound from "./pages/NotFound";
+import ProductDetail from "./pages/ProductDetail";
 
 const queryClient = new QueryClient();
 
@@ -31,8 +32,11 @@ const App = () => (
             <Route path="/kabadi" element={<KabadiShop />} />
             <Route path="/rewards" element={<Rewards />} />
             <Route path="/hire-workers" element={<HireWorkers />} />
-            <Route path="/training" element={<div className="p-8">Training Portal Coming Soon</div>} />
-            <Route path="/admin" element={<div className="p-8">Admin Panel Coming Soon</div>} />
+            <Route
+              path="/training"
+              element={<div className="p-8">Training Portal Coming Soon</div>}
+            />
+            <Route path="/product/:id" element={<ProductDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
