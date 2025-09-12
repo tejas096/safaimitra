@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { 
-  Home, 
-  LayoutDashboard, 
-  MessageSquare, 
-  ShoppingCart, 
-  Trophy, 
-  Recycle, 
+import {
+  Home,
+  LayoutDashboard,
+  MessageSquare,
+  ShoppingCart,
+  Trophy,
+  Recycle,
   Settings,
   Menu,
   X,
   Leaf,
-  Users
+  Users,
 } from "lucide-react";
 
 const Navigation = () => {
@@ -38,7 +38,9 @@ const Navigation = () => {
             <div className="p-2 eco-gradient rounded-lg">
               <Leaf className="h-6 w-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">EcoWaste</span>
+            <span className="text-xl font-bold text-foreground">
+              Safai Mitra
+            </span>
           </NavLink>
 
           {/* Desktop Navigation */}
@@ -69,7 +71,11 @@ const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
