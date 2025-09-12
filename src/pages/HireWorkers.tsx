@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Users, Clock, MapPin, Star, Truck, Shield } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 interface WorkerTeam {
   id: string;
@@ -26,6 +27,7 @@ const HireWorkers = () => {
   const [teamSize, setTeamSize] = useState<number>(2);
   const [workDuration, setWorkDuration] = useState<number>(4);
   const [workType, setWorkType] = useState<string>("");
+  const [includeVehicle, setIncludeVehicle] = useState<boolean>(false);
 
   const workerTeams: WorkerTeam[] = [
     {
@@ -71,10 +73,11 @@ const HireWorkers = () => {
     if (!team) return 0;
     
     const basePrice = team.hourlyRate * teamSize * workDuration;
+    const vehicleCost = includeVehicle ? 50 * workDuration : 0; // $50/hour for vehicle
     const urgencyMultiplier = workType === "emergency" ? 1.5 : 1;
     const teamSizeDiscount = teamSize >= 5 ? 0.9 : 1;
     
-    return Math.round(basePrice * urgencyMultiplier * teamSizeDiscount);
+    return Math.round((basePrice + vehicleCost) * urgencyMultiplier * teamSizeDiscount);
   };
 
   const selectedTeamData = workerTeams.find(t => t.id === selectedTeam);
@@ -230,6 +233,18 @@ const HireWorkers = () => {
                   <Input placeholder="Enter address or area" />
                 </div>
 
+                <div className="flex items-center justify-between space-x-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="vehicle">Include Garbage Collection Vehicle</Label>
+                    <p className="text-sm text-muted-foreground">+$50/hour for vehicle service</p>
+                  </div>
+                  <Switch
+                    id="vehicle"
+                    checked={includeVehicle}
+                    onCheckedChange={setIncludeVehicle}
+                  />
+                </div>
+
                 <div className="space-y-2">
                   <Label htmlFor="notes">Additional Notes</Label>
                   <Textarea 
@@ -249,16 +264,22 @@ const HireWorkers = () => {
                         <span>Base rate ({teamSize} × {workDuration}h):</span>
                         <span>${selectedTeamData?.hourlyRate ? selectedTeamData.hourlyRate * teamSize * workDuration : 0}</span>
                       </div>
+                      {includeVehicle && (
+                        <div className="flex justify-between text-blue-600">
+                          <span>Vehicle service ({workDuration}h):</span>
+                          <span>+${50 * workDuration}</span>
+                        </div>
+                      )}
                       {workType === "emergency" && (
                         <div className="flex justify-between text-orange-600">
                           <span>Emergency surcharge (+50%):</span>
-                          <span>+${selectedTeamData?.hourlyRate ? Math.round(selectedTeamData.hourlyRate * teamSize * workDuration * 0.5) : 0}</span>
+                          <span>+${selectedTeamData?.hourlyRate ? Math.round((selectedTeamData.hourlyRate * teamSize * workDuration + (includeVehicle ? 50 * workDuration : 0)) * 0.5) : 0}</span>
                         </div>
                       )}
                       {teamSize >= 5 && (
                         <div className="flex justify-between text-green-600">
                           <span>Large team discount (-10%):</span>
-                          <span>-${selectedTeamData?.hourlyRate ? Math.round(selectedTeamData.hourlyRate * teamSize * workDuration * 0.1) : 0}</span>
+                          <span>-${selectedTeamData?.hourlyRate ? Math.round((selectedTeamData.hourlyRate * teamSize * workDuration + (includeVehicle ? 50 * workDuration : 0)) * 0.1) : 0}</span>
                         </div>
                       )}
                     </div>
