@@ -2,13 +2,12 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
-  Home,
   LayoutDashboard,
   MessageSquare,
   ShoppingCart,
   Trophy,
   Recycle,
-  Settings,
+  Brain,
   Menu,
   X,
   Leaf,
@@ -25,6 +24,7 @@ const Navigation = () => {
     { href: "/rewards", label: "Rewards", icon: ShoppingCart },
     { href: "/hire-workers", label: "Hire Workers", icon: Users },
     { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
+    { href: "/ai-chat", label: "AI", icon: Brain },
   ];
 
   return (
