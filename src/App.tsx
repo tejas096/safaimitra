@@ -14,6 +14,7 @@ import HireWorkers from "./pages/HireWorkers";
 import NotFound from "./pages/NotFound";
 import ProductDetail from "./pages/ProductDetail";
 import AIChat from "./pages/AIChat";
+import AuthPage from "./pages/AuthPage";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/hire-workers" element={<HireWorkers />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/ai-chat" element={<AIChat />} />
+            <Route path="/login-signup" element={<AuthPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

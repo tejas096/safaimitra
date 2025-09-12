@@ -11,6 +11,7 @@ import {
   Menu,
   X,
   Leaf,
+  LockKeyhole,
   Users,
 } from "lucide-react";
 
@@ -25,6 +26,7 @@ const Navigation = () => {
     { href: "/hire-workers", label: "Hire Workers", icon: Users },
     { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
     { href: "/ai-chat", label: "AI", icon: Brain },
+    { href: "/login-signup", label: "Login / Signup", icon: LockKeyhole },
   ];
 
   return (
