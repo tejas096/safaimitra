@@ -17,6 +17,7 @@ import AIChat from "./pages/AIChat";
 import AuthPage from "./pages/AuthPage";
 import WorkerTraining from "./pages/WorkerTraing";
 import CitizenTraining from "./pages/CitizenTraining";
+import TenderBidding from "./pages/TenderBidding";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/bid" element={<TenderBidding />} />
             <Route path="/report" element={<ReportIssue />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/kabadi" element={<KabadiShop />} />

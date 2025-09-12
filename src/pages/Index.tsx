@@ -113,7 +113,7 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-up">
               <Button variant="hero" size="xl" asChild>
-                <NavLink to="/dashboard">
+                <NavLink to="/login-signup">
                   Get Started <ArrowRight className="h-5 w-5 ml-2" />
                 </NavLink>
               </Button>

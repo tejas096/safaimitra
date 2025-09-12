@@ -10,6 +10,7 @@ import {
   Brain,
   Menu,
   X,
+  Hammer,
   Leaf,
   LockKeyhole,
   Users,
@@ -26,15 +27,16 @@ const Navigation = () => {
     { href: "/hire-workers", label: "Hire Workers", icon: Users },
     { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
     { href: "/ai-chat", label: "AI", icon: Brain },
+    { href: "/bid", label: "Bidding", icon: Hammer },
     { href: "/login-signup", label: "Login / Signup", icon: LockKeyhole },
   ];
 
   return (
     <nav className="bg-background border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center space-x-2 hover-lift">
+          <NavLink to="/" className="flex items-center space-x-4 hover-lift">
             <div className="p-2 eco-gradient rounded-lg">
               <Leaf className="h-6 w-6 text-primary-foreground" />
             </div>

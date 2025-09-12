@@ -20,7 +20,6 @@ const Leaderboard = () => {
       points: 15420,
       avatar: "",
       category: "individual" as const,
-      change: "up" as const,
     },
     {
       rank: 2,
@@ -28,7 +27,6 @@ const Leaderboard = () => {
       points: 14850,
       avatar: "",
       category: "individual" as const,
-      change: "down" as const,
     },
     {
       rank: 3,
@@ -36,7 +34,6 @@ const Leaderboard = () => {
       points: 13990,
       avatar: "",
       category: "individual" as const,
-      change: "up" as const,
     },
     {
       rank: 4,
@@ -44,7 +41,6 @@ const Leaderboard = () => {
       points: 12750,
       avatar: "",
       category: "individual" as const,
-      change: "same" as const,
     },
     {
       rank: 5,
@@ -52,7 +48,6 @@ const Leaderboard = () => {
       points: 11680,
       avatar: "",
       category: "individual" as const,
-      change: "up" as const,
     },
     {
       rank: 6,
@@ -60,7 +55,6 @@ const Leaderboard = () => {
       points: 10920,
       avatar: "",
       category: "individual" as const,
-      change: "down" as const,
     },
     {
       rank: 7,
@@ -68,7 +62,6 @@ const Leaderboard = () => {
       points: 10150,
       avatar: "",
       category: "individual" as const,
-      change: "up" as const,
     },
     {
       rank: 8,
@@ -76,7 +69,6 @@ const Leaderboard = () => {
       points: 9840,
       avatar: "",
       category: "individual" as const,
-      change: "same" as const,
     },
   ];
 
@@ -87,7 +79,6 @@ const Leaderboard = () => {
       points: 28750,
       avatar: "",
       category: "worker" as const,
-      change: "up" as const,
     },
     {
       rank: 2,
@@ -95,7 +86,6 @@ const Leaderboard = () => {
       points: 26420,
       avatar: "",
       category: "worker" as const,
-      change: "same" as const,
     },
     {
       rank: 3,
@@ -103,7 +93,6 @@ const Leaderboard = () => {
       points: 24890,
       avatar: "",
       category: "worker" as const,
-      change: "down" as const,
     },
     {
       rank: 4,
@@ -111,7 +100,6 @@ const Leaderboard = () => {
       points: 23150,
       avatar: "",
       category: "worker" as const,
-      change: "up" as const,
     },
     {
       rank: 5,
@@ -119,7 +107,6 @@ const Leaderboard = () => {
       points: 21680,
       avatar: "",
       category: "worker" as const,
-      change: "up" as const,
     },
   ];
 
@@ -130,7 +117,6 @@ const Leaderboard = () => {
       points: 125420,
       avatar: "",
       category: "area" as const,
-      change: "up" as const,
     },
     {
       rank: 2,
@@ -138,7 +124,6 @@ const Leaderboard = () => {
       points: 118750,
       avatar: "",
       category: "area" as const,
-      change: "same" as const,
     },
     {
       rank: 3,
@@ -146,7 +131,6 @@ const Leaderboard = () => {
       points: 112340,
       avatar: "",
       category: "area" as const,
-      change: "down" as const,
     },
     {
       rank: 4,
@@ -154,7 +138,6 @@ const Leaderboard = () => {
       points: 98560,
       avatar: "",
       category: "area" as const,
-      change: "up" as const,
     },
     {
       rank: 5,
@@ -162,7 +145,6 @@ const Leaderboard = () => {
       points: 87920,
       avatar: "",
       category: "area" as const,
-      change: "up" as const,
     },
   ];
 
