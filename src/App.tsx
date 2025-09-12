@@ -15,6 +15,8 @@ import NotFound from "./pages/NotFound";
 import ProductDetail from "./pages/ProductDetail";
 import AIChat from "./pages/AIChat";
 import AuthPage from "./pages/AuthPage";
+import WorkerTraining from "./pages/WorkerTraing";
+import CitizenTraining from "./pages/CitizenTraining";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +39,8 @@ const App = () => (
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/ai-chat" element={<AIChat />} />
             <Route path="/login-signup" element={<AuthPage />} />
+            <Route path="/training/worker" element={<WorkerTraining />} />
+            <Route path="/training/citizen" element={<CitizenTraining />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

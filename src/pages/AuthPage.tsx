@@ -28,21 +28,6 @@ const AuthPage = () => {
   return (
     <div className="min-h-screen eco-gradient-light flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Header with eco branding */}
-        <div className="text-center mb-8 fade-in-up">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="flex items-center gap-1">
-              <TreePine className="h-8 w-8 text-primary" />
-              <Leaf className="h-6 w-6 text-primary" />
-              <Sprout className="h-5 w-5 text-primary" />
-            </div>
-          </div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">EcoAuth</h1>
-          <p className="text-muted-foreground">
-            Join our sustainable community
-          </p>
-        </div>
-
         {/* Auth Card */}
         <Card className="eco-card border-0 bounce-in">
           <CardHeader className="text-center pb-4">
@@ -290,13 +275,6 @@ const AuthPage = () => {
             </div>
           </CardContent>
         </Card>
-
-        {/* Footer */}
-        <div className="text-center mt-8 fade-in-up-delay-3">
-          <p className="text-sm text-muted-foreground">
-            Powered by sustainable technology 🌱
-          </p>
-        </div>
       </div>
     </div>
   );
