@@ -602,7 +602,7 @@ export default function TenderBidding() {
                               </p>
                             </div>
                             <span className="font-semibold text-primary">
-                              ${bid.amount.toLocaleString()}
+                              ₹{bid.amount.toLocaleString()}
                             </span>
                           </div>
                         ))}
