@@ -392,7 +392,7 @@ export default function TenderBidding() {
                           name="budget"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Budget ($)</FormLabel>
+                              <FormLabel>Budget (₹)</FormLabel>
                               <FormControl>
                                 <Input
                                   type="number"
@@ -477,7 +477,7 @@ export default function TenderBidding() {
                         </div>
                         <div className="flex items-center gap-2">
                           <DollarSign className="w-4 h-4 text-muted-foreground" />
-                          <span>Budget: ${tender.budget.toLocaleString()}</span>
+                          <span>Budget: ₹{tender.budget.toLocaleString()}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Clock className="w-4 h-4 text-muted-foreground" />
@@ -487,7 +487,7 @@ export default function TenderBidding() {
                           <div className="flex items-center gap-2">
                             <Trophy className="w-4 h-4 text-primary" />
                             <span className="text-primary font-medium">
-                              Current: $
+                              Current: ₹
                               {tender.currentLowestBid.toLocaleString()}
                             </span>
                           </div>
@@ -498,7 +498,7 @@ export default function TenderBidding() {
                         <div className="mt-3 p-3 bg-primary/10 rounded-lg">
                           <div className="flex items-center gap-2 text-primary font-medium">
                             <Trophy className="w-4 h-4" />
-                            Winner: {tender.winner.name} - $
+                            Winner: {tender.winner.name} - ₹
                             {tender.winner.bid.toLocaleString()}
                           </div>
                         </div>
@@ -552,7 +552,7 @@ export default function TenderBidding() {
                               />
                             </div>
                             <div>
-                              <Label htmlFor="bidAmount">Bid Amount ($)</Label>
+                              <Label htmlFor="bidAmount">Bid Amount (₹)</Label>
                               <Input
                                 id="bidAmount"
                                 type="number"
